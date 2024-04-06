@@ -1,5 +1,5 @@
 const express = require('express')
-
+const colors = require('colors');
 const app = express();
 
 
@@ -15,5 +15,5 @@ app.get('/', (req, res) => {
 const PORT = 6060
 
 app.listen(PORT, () => {
-    console.log(`Server running on ${PORT}`)
+    console.log(`Server running on ${PORT}`.bgCyan.white)
 })
