@@ -1,13 +1,14 @@
 const jwt = require("jsonwebtoken");
 const usermodel = require("../models/usermodel");
-const { use } = require("../routes/authroute");
 
 //protected route
 
 
 const requiresignin = async (req, res, next) => {
     try {
-        const decode = jwt.verify(req.headers.authorization, process.env.JWT_SECRET)
+        const decode = jwt.verify(req.headers.authorization,
+            process.env.JWT_SECRET);
+        req.user = decode;
         next();
     }
     catch (err) {

@@ -98,7 +98,7 @@ const logincontroller = async (req, res) => {
                 name: user.name,
                 email: user.email,
                 phone: user.phone,
-                adddress: user.address,
+                address: user.address,
             },
             token,
         });
@@ -114,9 +114,14 @@ const logincontroller = async (req, res) => {
 
     }
 }
+const testcontroller = async (req, res) => {
+    console.log('protected route')
+
+}
 
 
 module.exports = {
     registercontroller,
-    logincontroller
+    logincontroller,
+    testcontroller
 };
